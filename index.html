@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+        <!-- Change these metadata and add favicon.ico to root -->
+        <meta name="description" content="Busfarm || $BFARM-$BUSD" />
+        <title>Busfarm</title>
+        <meta name="author" content="Moon Tonight" />
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+
+        <!-- Google fonts-->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/animate.min.css" rel="stylesheet" />
+        <link href="assets/aos/aos.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">Busfarm</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#roadmap">Roadmap</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#news">news</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#signup">Join</a></li>
+                        <!-- You can insert more external links here, even with FontAwesome Icons like this: -->
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://t.me/coinnamegoesheresoon"><i class="fab fa-telegram"></i></a></li>
+                    </ul>
+
+                    <!-- TODO: Change Pancakeswap outputCurrency! -->
+                    <a href="https://exchange.pancakeswap.finance/#/swap" class="btn btn-sm btn-primary btn-coincustom p-2 mr-2">
+                        <img src="assets/img/pancake_swap_logo.png" style="width: 16px" alt="Pancake Swap">
+                        BUY TOKENS
+                    </a>
+
+                    <button id="btn-connect-metamask" class="btn btn-sm btn-primary btn-coincustom p-2 mr-2" onclick="metamaskConnect()">
+                        <img src="assets/img/metamask_logo.png" style="width: 16px" alt="Metamask Connect">
+                        <span class="text">CONNECT</span>
+                    </button>
+
+                    <a href="/farm.html" class="btn btn-sm btn-primary btn-coincustom p-2">
+                        <img src="assets/img/wheat.png" style="width: 16px" alt="Farm">
+                        FARM
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Masthead-->
+        <header class="masthead overflow-hidden" style="z-index: 2!important">
+            <div class="container d-flex h-100 align-items-center">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <img class="animate__animated animate__bounce" id="busfarm-logo" src="assets/img/bfarm-logo_transparent.png" alt="Busfarm Logo" style="width:100%">
+                    </div>
+                    <div class="col-12 col-md-6 pt-5">
+                        <div class="mx-auto text-center">
+                            <h1 class="mx-auto my-0 text-uppercase">BUSFARM</h1>
+                            <h2 class="mx-auto mt-2 mb-5">
+                                Honk, honk! Your bus arrived!
+                            </h2>
+                            <a class="btn btn-primary js-scroll-trigger" href="#about" onclick="honk()">Get On</a>
+                            <audio src="assets/horn.ogg" id="audio-horn"></audio>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="bg-bubbles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </header>
+        <!-- About-->
+        <section class="about-section text-center" id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div data-aos="fade-down">
+                        <h2 class="mb-4 display-2">This is <span class="highlight">BUSFARM</span></h2>
+                        <p class="">
+                            This is a coin template by Moon Tonight. Fill this paragraph block with your introduction message.
+                            Lorem ipsun dolor sit amet meditabitur
+                        </p>
+                        </div>
+
+                        <div class="numbers" data-aos="fade-down">
+                            <h1 id="num-total-supply"></h1>
+                            <h2>TOTAL SUPPLY</h2>
+                        </div>
+
+                        <div class="numbers" data-aos="fade-down">
+                            <h1 id="num-circulating-supply"></h1>
+                            <h2>CIRCULATING SUPPLY</h2>
+                        </div>
+
+                        <div class="numbers" data-aos-off="fade-down">
+                            <h1 id="num-tokens-burnt"></h1>
+                            <h2>TOKENS BURNT</h2>
+                        </div>
+
+                        <!-- Timeline -->
+                        <div id="roadmap" class="container pt-5" data-aos="fade-down">
+                            <div class="main-timeline">
+
+                                <!-- start experience section-->
+                                <div class="timeline">
+                                    <div class="icon"></div>
+                                    <div class="date-content">
+                                        <div class="date-outer">
+                                    <span class="date">
+                                            <span class="month">Q1</span>
+                                    <span class="year">2021</span>
+                                    </span>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <h5 class="title">
+                                            Something...
+                                        </h5>
+                                    </div>
+                                </div>
+                                <!-- end experience section-->
+
+                                <!-- start experience section-->
+                                <div class="timeline">
+                                    <div class="icon"></div>
+                                    <div class="date-content">
+                                        <div class="date-outer">
+                                    <span class="date">
+                                            <span class="month">Q2</span>
+                                    <span class="year">2021</span>
+                                    </span>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <h5 class="title">Something...</h5>
+                                    </div>
+                                </div>
+                                <!-- end experience section-->
+
+                                <!-- start experience section-->
+                                <div class="timeline">
+                                    <div class="icon"></div>
+                                    <div class="date-content">
+                                        <div class="date-outer">
+                                    <span class="date">
+                                            <span class="month">Q3</span>
+                                    <span class="year">2021</span>
+                                    </span>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <h5 class="title">Something...</h5>
+                                    </div>
+                                </div>
+                                <!-- end experience section-->
+
+                                <!-- start experience section-->
+                                <div class="timeline">
+                                    <div class="icon"></div>
+                                    <div class="date-content">
+                                        <div class="date-outer">
+                                    <span class="date">
+                                            <span class="month">Q4</span>
+                                    <span class="year">2021</span>
+                                    </span>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <h5 class="title">Something...</h5>
+                                    </div>
+                                </div>
+                                <!-- end experience section-->
+
+                                <!-- start experience section-->
+                                <div class="timeline">
+                                    <div class="icon"></div>
+                                    <div class="date-content">
+                                        <div class="date-outer">
+                                    <span class="date">
+                                            <span class="month">Q1</span>
+                                    <span class="year">2022</span>
+                                    </span>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <h5 class="title">Something...</h5>
+                                    </div>
+                                </div>
+                                <!-- end experience section-->
+
+                            </div>
+                        </div>
+                        <!-- /Timeline -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- News-->
+        <section class="news-section bg-light" id="news">
+            <div class="container">
+                <!-- News Article / Blog Post / Announcement -->
+                <div class="row justify-content-center no-gutters mb-5 mb-lg-0" data-aos="flip-up">
+                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/bfarm-logo_transparent.png" alt="" /></div>
+                    <div class="col-lg-6">
+                        <div class="bg-black text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-left">
+                                    <h4 class="text-white">The Bus arrived! Get on!</h4>
+                                    <p class="mb-0 text-white-50 mb-2">Join our Telegram group to start now!</p>
+                                    <a href="#signup" target="">Join</a>
+                                    <hr class="d-none d-lg-block mb-0 ml-0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Signup-->
+        <section class="signup-section" id="signup">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-lg-8 mx-auto text-center" data-aos="zoom-in">
+                        <i class="fab fa-telegram fa-2x mb-2 text-white"></i>
+                        <h2 class="text-white mb-5 wow animate__tada">Join our Telegram!</h2>
+                        <a href="#" class="btn btn-primary mx-auto">Join</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact-->
+        <section class="contact-section bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fab fa-telegram text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Telegram</h4>
+                                <hr class="my-4" />
+                                <div class="small text-black-50"><a href="https://t.me/coinnamegoesheresoon">t.me/coinnamegoesheresoon</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-envelope text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Email</h4>
+                                <hr class="my-4" />
+                                <div class="small text-black-50"><a href="mailto:coinnamegoesheresoon@protonmail.com">coinnamegoesheresoon@protonmail.com</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="footer bg-black small text-center text-white-50">
+            <div class="container">
+                Copyright © Busfarm 2021 | Design: Moon Tonight
+            </div>
+        </footer>
+
+        <!-- Modals -->
+
+        <div id="metamask-fail-modal" class="modal fade" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-fade">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Install Metamask first</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            You need to install <strong>MetaMask</strong> browser extension to be able to connect.
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <a type="button" target="_blank" href="https://metamask.io/download.html" class="btn btn-primary">Download Metamask</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Web3 JS for Metamask auth -->
+        <script src="js/web3.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="assets/aos/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.min.js"></script>
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
